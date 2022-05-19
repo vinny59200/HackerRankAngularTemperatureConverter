@@ -18,14 +18,14 @@ export class TemperatureConverter implements OnInit {
   onCelsiusChange(searchValue: string): void {
     console.log(searchValue);
     let string = this.celsius;
-    let num = parseInt(string) * 9 / 5 + 32;
+    let num = Number(parseInt(string) * 9 / 5 + 32).toFixed(1);
     this.fahrenheit = num.toString();
   }
 
   onFahrenheitChange(searchValue: string): void {
     console.log(searchValue);
     let string = this.fahrenheit;
-    let num = (parseInt(string)- 32) * 5 / 9;
+    let num = Number((parseInt(string)- 32) * 5 / 9).toFixed(1);
     this.celsius = num.toString();
   }
 
